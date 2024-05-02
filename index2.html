@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ bài 11 đến 16</title>
+</head>
+<body>
+<h4>11. Nhập vào tuổi trong biến age, in ra 'Đủ tuổi' nếu age>18</h4>
+<input type="number" placeholder="Nhập tuổi" id="age">
+<button onclick="check ()">Kiểm tra</button>
+<p id="kt"></p>
+<script>
+    function check() {
+        let age = +document.getElementById('age').value;
+        if (age > 18) {
+            document.getElementById('kt').innerHTML = 'Đủ tuổi';
+        } else {
+            document.getElementById('kt').innerHTML = 'Không Đủ tuổi';
+        }
+    }
+</script>
+<hr>
+<h4>12. Nhập và a, in ra 'Hello' nếu a chẵn, 'Hi' nếu a lẻ</h4>
+<input type="number" placeholder="Nhập số" id="a">
+<button onclick="kiemtra ()">Kiểm tra</button>
+<p id="kq"></p>
+<script>
+    function kiemtra() {
+        let a = +document.getElementById('a').value;
+        if (a % 2 == 0) {
+            document.getElementById('kq').innerHTML = 'Hello';
+        } else {
+            document.getElementById('kq').innerHTML = 'Hi';
+        }
+    }
+</script>
+<hr>
+<h4>13. Nhập vào a, b. Nếu a>b in ra tổng, nếu a nho hon b in ra tích, nếu a bang in ra 'Hihi'</h4>
+<input type="number" placeholder="Nhập số a" id="soa">
+<input type="number" placeholder="Nhập số b" id="sob">
+<button onclick="kiem ()">Kiểm tra</button>
+<p id="in"></p>
+<script>
+    function kiem() {
+        let soa = +document.getElementById('soa').value;
+        let sob = +document.getElementById('sob').value;
+        if (soa < sob) {
+            let tich = soa * sob;
+            document.getElementById('in').innerHTML = 'Tích là: ' + tich;
+        } else if (soa > sob) {
+            let tong = soa + sob;
+            document.getElementById('in').innerHTML = 'Tổng là: ' + tong;
+        } else {
+            document.getElementById('in').innerHTML = 'hihi';
+        }
+    }
+</script>
+<hr>
+<h4>14. Nhập x,y,z. In ra số lớn nhất</h4>
+<input type="number" placeholder="Nhập số x" id="x">
+<input type="number" placeholder="Nhập số y" id="y">
+<input type="number" placeholder="Nhập số z" id="z">
+<button onclick="solonnhat ()">Tìm số lớn nhất</button>
+<p id="max"></p>
+<script>
+    function solonnhat() {
+        let x = +document.getElementById('x').value;
+        let y = +document.getElementById('y').value;
+        let z = +document.getElementById('z').value;
+        if (x > y && x > z) {
+            document.getElementById('max').innerHTML = 'Số lớn nhất là: ' + x;
+        } else if (y > x && y > z) {
+            document.getElementById('max').innerHTML = 'Số lớn nhất là: ' + y;
+        } else {
+            document.getElementById('max').innerHTML = 'Số lớn nhất là: ' + z;
+        }
+    }
+</script>
+<hr>
+<h4>15. In ra 100 chữ 'Hello'</h4>
+<script>
+    let a = 0;
+    while (a <= 100) {
+        document.write('<br>' + 'hello')
+        a++;
+    }
+</script>
+<hr>
+<h4>16. Nhập vào N từ prompt. In ra N lần chữ 'Hello'</h4>
+<script>
+    let n = +prompt('Nhập số lượng cần in ra');
+    for (i = 0; i < n; i++) {
+        document.write('<br>' + 'hello');
+    }
+</script>
+</body>
+</html>
