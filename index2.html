@@ -50,7 +50,7 @@
         } else if (soa > sob) {
             let tong = soa + sob;
             document.getElementById('in').innerHTML = 'Tổng là: ' + tong;
-        } else {
+        } else if (soa === sob) {
             document.getElementById('in').innerHTML = 'hihi';
         }
     }
@@ -67,14 +67,14 @@
         let x = +document.getElementById('x').value;
         let y = +document.getElementById('y').value;
         let z = +document.getElementById('z').value;
-        if (x > y && x > z) {
-            document.getElementById('max').innerHTML = 'Số lớn nhất là: ' + x;
-        } else if (y > x && y > z) {
-            document.getElementById('max').innerHTML = 'Số lớn nhất là: ' + y;
-        } else {
-            document.getElementById('max').innerHTML = 'Số lớn nhất là: ' + z;
+        let max = x; // max = 10
+        if (max < y) { // 10 < 8
+            max = y;
         }
-    }
+        if (max < z) { // 10 < 6
+            max = z;
+        }
+        document.getElementById('max').innerHTML = 'Số lớn nhất là: ' + max;
 </script>
 <hr>
 <h4>15. In ra 100 chữ 'Hello'</h4>
@@ -89,8 +89,10 @@
 <h4>16. Nhập vào N từ prompt. In ra N lần chữ 'Hello'</h4>
 <script>
     let n = +prompt('Nhập số lượng cần in ra');
+    let dem = '';
     for (i = 0; i < n; i++) {
-        document.write('<br>' + 'hello');
+        dem++;
+        document.write('<br>' + dem + '.hello');
     }
 </script>
 </body>

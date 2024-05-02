@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Từ bài 17-25</title>
+    <title>Từ bài 17-21</title>
 </head>
 <body>
 <h4>17. In ra cac số từ 1 đến 100</h4>
@@ -24,14 +24,78 @@
         let a = document.getElementById('a').value;
         let b = document.getElementById('b').value;
         let dem = '';
-        if (a && b > 0) {
+        if (a > 0 && b > 0) {
             for (let i = a; i <= b; i++) {
-                dem += '<br>' + i
+                dem += '<br>' + i;
                 document.getElementById('kq').innerHTML = 'các số từ ' +a+ ' đến ' + b+ ' là: ' + dem;
             }
         }
     }
 </script>
 <hr>
+<h4>19. In ra cac số từ a đến b, mỗi số trong 1 thẻ h1</h4>
+<input type="number" placeholder="nhap a" id="soa">
+<input type="number" placeholder="nhap b" id="sob">
+<button onclick="inrah1()">In ra</button>
+<p id="kqh1"></p>
+<script>
+    function inrah1() {
+        let a = document.getElementById('soa').value;
+        let b = document.getElementById('sob').value;
+        let dem ='';
+        if (a > 0 && b > 0) {
+            for (let i = a; i <= b ; i++) {
+                dem += '<h1>' + i;
+                document.getElementById('kqh1').innerHTML = 'các số từ ' +a+ ' đến ' + b+ ' là: ' + dem;
+            }
+        }
+    }
+</script>
+<hr>
+<h4>20. In ra các số chẵn tu a đến b</h4>
+<input type="number" placeholder="nhap a" id="soa1">
+<input type="number" placeholder="nhap b" id="sob1">
+<button onclick="inrachan()">In ra</button>
+<p id="kqchan"></p>
+<script>
+    function inrachan() {
+        let a = document.getElementById('soa1').value;
+        let b = document.getElementById('sob1').value;
+        let dem ='';
+        if (a > 0 && b > 0) {
+            for (let i = a; i <= b ; i++) {
+                if (i % 2 == 0) {
+                    dem += '<br>' + i;
+                }
+            }
+            document.getElementById('kqchan').innerHTML = 'các số chẵn từ ' + a + ' đến ' + b + ' là: ' + dem;
+        }
+    }
+</script>
+<hr>
+<h4>21. In ra các số từ a đến b số chẵn trong h2, so le trong h1</h4>
+<input type="number" placeholder="nhap a" id="soa2">
+<input type="number" placeholder="nhap b" id="sob2">
+<button onclick="chanle()">In ra</button>
+<p id="kq2"></p>
+<script>
+    function chanle() {
+        let a = document.getElementById('soa2').value;
+        let b = document.getElementById('sob2').value;
+        let dem ='';
+        if (a > 0 && b > 0){
+            for (let i = a; i <= b ; i++) {
+                if (i % 2 == 0) {
+                    dem += '<h2>' + i;
+                    document.getElementById('kq2').innerHTML = 'các số từ ' + a + ' đến ' + b + ' là: ' + dem;
+                }
+                else if (i % 2 != 0) {
+                    dem += '<h1>' + i;
+                    document.getElementById('kq2').innerHTML = 'các số từ ' + a + ' đến ' + b + ' là: ' + dem;
+                }
+            }
+        }
+    }
+</script>
 </body>
 </html>

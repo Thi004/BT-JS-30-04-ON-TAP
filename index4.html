@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ bài 22-30</title>
+</head>
+<body>
+<h4>22. Tính tích, Tính Tổng các số chia 5 dư 2 từ a đến b</h4>
+<input type="number" placeholder="nhap a" id="a">
+<input type="number" placeholder="nhap b" id="b">
+<button onclick="inra()">In ra</button>
+<p id="kq"></p>
+<script>
+    function inra() {
+        let a = document.getElementById('a').value;
+        let b = document.getElementById('b').value;
+        let dem = '';
+        if (a > 0 && b > 0) {
+            for (let i = a; i <= b; i++) {
+                if (i % 5 === 2) {
+                    dem += '<br>' + i;
+                }
+            }
+            document.getElementById('kq').innerHTML = 'các số chia co 5 dư 2 từ ' + a + ' đến ' + b + ' là: ' + dem;
+        }
+    }
+</script>
+<hr>
+<h4>25. </h4>
+<p id="dis"></p>
+<input type="number" id="so">
+<button onclick="them()">Thêm</button>
+<button onclick="dem()">Điếm</button>
+<br>
+<p id="kq1"></p>
+<script>
+    let arr = [];
+
+    function them() {
+        let pt = +document.getElementById('so').value;
+        arr.push(pt);
+        let str = '';
+        for (let i = 0; i < arr.length; i++) {
+            str += arr[i] + '<br>';
+        }
+        document.getElementById('dis').innerHTML = str;
+        // thêm xong xóa trăng input
+        document.getElementById('so').value = '';
+    }
+
+    function dem() {
+        let d = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 5 == 2) {
+                d++;
+            }
+        }
+        document.getElementById('kq1').innerHTML = d
+    }
+</script>
+</body>
+</html>
